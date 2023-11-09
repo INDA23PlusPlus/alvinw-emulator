@@ -177,6 +177,10 @@ impl Emulator {
         Ok(())
     }
 
+    fn read_registry(&mut self) -> Result<u8, EmulatorError> {
+        Ok(self.bytes.read_u8()?)
+    }
+
     fn read_address(&mut self) -> Result<u32, EmulatorError> {
         Ok(self.bytes.read_u32::<BigEndian>()?)
     }
